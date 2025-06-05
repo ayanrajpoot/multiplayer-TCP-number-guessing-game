@@ -1,0 +1,163 @@
+import socket
+import threading
+import random
+import time
+
+# Game configuration
+MAX_GUESSES = 100
+GUESS_TIME_LIMIT = 20  
+ROUNDS = 3
+
+HOST = 'localhost'
+PORT = 12345
+clients = {} 
+player_scores = {}
+round_number = 0
+game_active = False
+
+def log_game_event(event):
+    with open("game_log.txt", "a") as log_file:
+        log_file.write(f"{time.ctime()}: {event}\n")
+
+# Function to broadcast messages to all connected clients
+def broadcast_message(message):
+    for client_socket in clients.keys():
+        try:
+            client_socket.send(message.encode('utf-8'))
+        except:
+            # Handle client disconnection
+            clients.pop(client_socket, None)
+
+# Function to handle each client connection
+def handle_client(client_socket, client_address):
+    global round_number, game_active
+    client_socket.send("Welcome to the Guessing Game! Please enter your name: ".encode('utf-8'))
+    name = client_socket.recv(1024).decode('utf-8')
+    
+    if name not in player_scores:
+        player_scores[name] = 0
+        clients[client_socket] = name
+    
+    log_game_event(f"{name} connected from {client_address}")
+    chat_room(client_socket, name)
+
+def chat_room(client_socket, name):
+    global round_number, game_active
+    if game_active == False :
+        broadcast_message(f"{name} has joined the Chat room.")
+        client_socket.send("Type '\\start' to start the game. Type '\\board' to see the leaderboard. Or you can just chat.".encode('utf-8'))
+        
+        while game_active == False:
+                message = client_socket.recv(1024).decode('utf-8')
+                
+                if message.lower() == "\\start" and round_number == 0 and not game_active:
+                    round_number += 1
+                    client_socket.send("Please select from level 1, 2, or 3.".encode('utf-8'))
+                    level = client_socket.recv(1024).decode('utf-8')
+                    return start_game(level,name)
+                
+                elif message.lower() == "\\board":
+                    leaderboard = generate_leaderboard()
+                    client_socket.send(leaderboard.encode('utf-8'))
+                
+                elif message.lower() == "\\start" and game_active:
+                    client_socket.send("The game is already in progress.".encode('utf-8'))
+                else:
+                    if not game_active :
+                        if message:
+                            broadcast_message(f"{name}: {message}")
+                            log_game_event(f"{name} (chat): {message}")
+
+    
+def start_game(level,name):
+    global round_number,game_active
+    game_active = True
+    maxnum = 0
+    secret_number = 0   
+    if level == "1":
+        secret_number = random.randint(1, 100)
+        maxnum = 100
+    elif level == "2":
+        secret_number = random.randint(1, 150)
+        maxnum = 150
+    elif level == "3":
+        secret_number = random.randint(1, 200)
+        maxnum = 200
+        
+    log_game_event(f"\nRound {round_number} started by {name} at level {level}.")
+    broadcast_message(f"\nYou have {MAX_GUESSES} guesses and {GUESS_TIME_LIMIT} seconds. \nGood luck!\n")
+
+    for client_socket in clients.keys():
+        name = clients[client_socket]
+        threading.Thread(target=play_round, args=(client_socket, name, secret_number)).start()
+
+def play_round(client_socket, name, secret_number):
+    global round_number, game_active,clients
+    if game_active == True:
+        if round_number > ROUNDS:
+            broadcast_message(f"\n Game over! The final leaderboard is:\n{generate_leaderboard()}")
+            log_game_event(f"Game over. Final leaderboard:\n{generate_leaderboard()}")
+            reset_game(client_socket, name)
+            
+        client_socket.send(f"\nRound {round_number} started ".encode('utf-8'))  
+        # broadcast_message {clients[client_socket]}")
+        
+        guesses = 0
+        start_time = time.time()
+
+        while guesses < MAX_GUESSES and (time.time() - start_time) < GUESS_TIME_LIMIT:
+            client_socket.send("Enter your guess: ".encode('utf-8'))
+            guess = int(client_socket.recv(1024).decode('utf-8'))
+            
+            if guess == secret_number:
+                broadcast_message(f"{name} guessed correctly!")
+                player_scores[name] += 10
+                log_game_event(f"\n {name} guessed correctly! {name} scored 10 points this round.")
+                reset_game(client_socket, name)
+                break
+            elif guess < secret_number:
+                client_socket.send("Too low.".encode('utf-8'))
+            else:
+                client_socket.send("Too high.".encode('utf-8'))
+            
+            guesses += 1
+        
+            if guesses == MAX_GUESSES or (time.time() - start_time) >= GUESS_TIME_LIMIT:
+                broadcast_message(f"\n Round {round_number} over. The secret number was {secret_number}. No points this round.")
+                log_game_event(f"\n Round over. {name} failed to guess the number. The correct number was {secret_number}.")
+                play_round(client_socket, name, secret_number)
+            round_number += 1
+        
+        
+    
+    
+
+def generate_leaderboard():
+    if not player_scores:
+        return "Leaderboard is empty."
+    
+    sorted_players = sorted(player_scores.items(), key=lambda x: x[1], reverse=True)
+    leaderboard = "\n".join([f"{name}: {score} points" for name, score in sorted_players])
+    return leaderboard
+
+def reset_game(client_socket, name):
+    global round_number, player_scores, clients, game_active
+    round_number = 0
+    player_scores = {}
+    game_active = False
+    broadcast_message("Game has been reset. Type '\\start' to play again.")
+    chat_room(client_socket, name)
+
+# Server socket setup
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind((HOST, PORT))
+server.listen(5)
+print(f"Server started on {HOST}:{PORT}")
+
+def accept_clients():
+    while True:
+        client_socket, client_address = server.accept()
+        threading.Thread(target=handle_client, args=(client_socket, client_address)).start()
+
+if __name__ == "__main__":
+    accept_clients()

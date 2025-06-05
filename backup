@@ -1,0 +1,243 @@
+import socket
+import threading
+import random
+import time
+
+clients = {}          # conn -> (name, addr)
+scores = {}           # name -> score
+MAX_ROUNDS = 3
+current_round = 1
+secret_number = random.randint(1, 100)
+leaderboard_lock = threading.Lock()
+game_active = False
+reset_event = threading.Event()
+
+# Broadcast to all clients
+def broadcast(message, exclude=None):
+    for conn in list(clients):
+        if conn != exclude:
+            try:
+                conn.send(message.encode())
+            except:
+                remove_client(conn)
+
+# Remove client
+def remove_client(conn):
+    if conn in clients:
+        name = clients[conn][0]
+        with leaderboard_lock:
+            if name in scores:
+                del scores[name]
+            del clients[conn]
+        broadcast(f"{name} disconnected.\n")
+    try:
+        conn.shutdown(socket.SHUT_RDWR)
+    except:
+        pass
+    try:
+        conn.close()
+    except:
+        pass
+
+# Show leaderboard
+def show_leaderboard():
+    sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+    board = "\n🏆 Leaderboard:\n"
+    for name, score in sorted_scores:
+        board += f"{name}: {score} points\n"
+    broadcast(board)
+
+# Reset game
+def reset_game():
+    global current_round, secret_number, game_active
+    with leaderboard_lock:
+        current_round = 1
+        secret_number = random.randint(1, 100)
+        game_active = False
+        scores.clear()
+    broadcast("\n✨ New game starting!\n")
+
+# Ask for replay
+def ask_replay():
+    broadcast("\nPlay again? (Y/N)\n")
+    votes = {"Y": 0, "N": 0}
+    voted_clients = 0
+
+    for conn in list(clients):
+        try:
+            conn.settimeout(30)
+            conn.send(b"Do you want to play again? (Y/N): ")
+            vote = conn.recv(1024).decode().strip().upper()
+            if vote in votes:
+                votes[vote] += 1
+                voted_clients += 1
+        except:
+            continue
+
+    if voted_clients == 0 or votes["N"] >= votes["Y"]:
+        broadcast("\nGame ended. Thanks for playing!\n")
+        for conn in list(clients):
+            remove_client(conn)
+    else:
+        reset_game()
+        reset_event.set()
+        time.sleep(1)
+        reset_event.clear()
+
+# Main game loop
+def game_loop():
+    global current_round, game_active, secret_number
+    while True:
+        for _ in range(MAX_ROUNDS):
+            with leaderboard_lock:
+                game_active = False
+            secret_number = random.randint(1, 100)
+            broadcast(f"\n⏳ Round {current_round} starts in 15 seconds...\n")
+            time.sleep(3)
+
+            with leaderboard_lock:
+                game_active = True
+                round_start_time = time.time()
+
+            broadcast(f"\n🎯 Round {current_round} started! Guess 1-100.\n")
+
+            ROUND_DURATION = 3
+            while game_active and (time.time() - round_start_time < ROUND_DURATION):
+                time.sleep(0.1)
+
+            if game_active:
+                broadcast(f"\n⏰ Round {current_round} time's up! The number was {secret_number}\n")
+                with leaderboard_lock:
+                    game_active = False
+
+            broadcast(f"✅ Round {current_round} ended. Number was {secret_number}!\n")
+            current_round += 1
+
+        show_leaderboard()
+        ask_replay()
+        reset_event.wait()
+
+# Handle each client
+def handle_client(conn, addr):
+    global game_active, secret_number, current_round
+    wait = 0
+    try:
+        conn.settimeout(30)
+        conn.send(b"Enter your name (max 20 chars): ")
+        name = conn.recv(1024).decode().strip()[:20]
+        if not name:
+            raise ValueError("Empty name")
+
+        with leaderboard_lock:
+            clients[conn] = (name, addr)
+            scores[name] = 0
+        broadcast(f"{name} joined the game!\n")
+
+        while True:
+            if not game_active:
+                if current_round > MAX_ROUNDS:
+                    conn.send(b"\nGame ended. Waiting for replay vote...\n")
+                    time.sleep(5)
+                else:
+                    if wait == 0:
+                        conn.send(b"\nWaiting for next round... (Type /chat <message> to chat)\n")
+                        wait = 1  
+                    try:
+                        conn.settimeout(1)
+                        data = conn.recv(1024).decode().strip()
+                        if data.startswith("/chat"):
+                            msg = data[5:].strip()
+                            if msg:
+                                broadcast(f"[Chat] {name}: {msg}\n")
+                    except socket.timeout:
+                        continue
+                    except:
+                        break
+                continue
+
+            # During gameplay
+            try:
+                conn.settimeout(10)
+                data = conn.recv(1024).decode().strip()
+                if not data:
+                    continue
+
+                if data.startswith("/chat"):
+                    conn.send(b"Chat disabled during gameplay. Guess a number!\n")
+                    continue
+
+                try:
+                    guess = int(data)
+                    with leaderboard_lock:
+                        if guess == secret_number:
+                            scores[name] += 1
+                            conn.send(b"Correct!\n")
+                            broadcast(f"🎉 {name} guessed the number!\n")
+                            game_active = False
+                        elif guess < secret_number:
+                            conn.send(b"Too low\n")
+                        else:
+                            conn.send(b"Too high\n")
+                except ValueError:
+                    conn.send(b"Enter a number between 1-100\n")
+
+            except socket.timeout:
+                continue
+            except (ConnectionResetError, BrokenPipeError):
+                break
+
+    except Exception as e:
+        print(f"Client error ({addr}): {str(e)}")
+    finally:
+        remove_client(conn)
+
+# Start the server
+def start_server():
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.bind(("0.0.0.0", 5555))
+    server.listen()
+    print("Server running on port 5555")
+
+    threading.Thread(target=game_loop, daemon=True).start()
+
+    while True:
+        conn, addr = server.accept()
+        threading.Thread(target=handle_client, args=(conn, addr), daemon=True).start()
+
+if __name__ == "__main__":
+    start_server()
+
+
+import socket
+import threading
+
+def receive_messages(sock):
+    while True:
+        try:
+            data = sock.recv(1024).decode()
+            if not data:
+                break
+            print(data)
+        except:
+            break
+
+
+def main():
+    client = socket.socket()
+    client.connect(("127.0.0.1", 5555))  # Replace with server IP if needed
+
+    threading.Thread(target=receive_messages, args=(client,), daemon=True).start()
+
+    while True:
+        try:
+            msg = input()
+            if msg:
+                client.send(msg.encode())
+        except KeyboardInterrupt:
+            print("\nDisconnected from game.")
+            client.close()
+            break
+
+
+if __name__ == "__main__":
+    main()

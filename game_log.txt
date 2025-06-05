@@ -1,0 +1,133 @@
+Fri Jun  6 03:28:44 2025: ion connected from ('127.0.0.1', 62711)
+Fri Jun  6 03:28:49 2025: ayan connected from ('127.0.0.1', 62709)
+Fri Jun  6 03:28:54 2025: ayan (chat): hello
+Fri Jun  6 03:28:59 2025: ayan (chat): how are you
+Fri Jun  6 03:29:13 2025: ion (chat): i am how are you
+Fri Jun  6 03:29:30 2025: 
+Round 1 started by ayan at level 1.
+Fri Jun  6 03:29:53 2025: Round over. ion failed to guess the number. The correct number was 82.
+Fri Jun  6 03:30:10 2025: Round over. ayan failed to guess the number. The correct number was 24.
+Fri Jun  6 03:30:25 2025: Round over. ion failed to guess the number. The correct number was 74.
+Fri Jun  6 03:30:25 2025: Game over. Final leaderboard:
+ion: 0 points
+ayan: 0 points
+Fri Jun  6 03:30:49 2025: ion (chat): 1
+Fri Jun  6 03:30:54 2025: 
+Round 1 started by ion at level 1.
+Fri Jun  6 03:31:06 2025: Round over. ayan failed to guess the number. The correct number was 6.
+Fri Jun  6 03:31:16 2025: Round over. ion failed to guess the number. The correct number was 12.
+Fri Jun  6 03:39:11 2025: ion connected from ('127.0.0.1', 63348)
+Fri Jun  6 03:39:19 2025: ayan connected from ('127.0.0.1', 63345)
+Fri Jun  6 03:39:21 2025: ayan (chat): ho
+Fri Jun  6 03:39:36 2025: ayan (chat): how are you
+Fri Jun  6 03:39:46 2025: ion (chat): i am good how are you
+Fri Jun  6 03:39:50 2025: ayan (chat): great
+Fri Jun  6 03:39:58 2025: ayan (chat): lets start the game 
+Fri Jun  6 03:41:09 2025: ion connected from ('127.0.0.1', 63393)
+Fri Jun  6 03:41:12 2025: ayan connected from ('127.0.0.1', 63391)
+Fri Jun  6 03:41:14 2025: ayan (chat): hi
+Fri Jun  6 03:41:19 2025: 
+Round 1 started by ayan at level 1.
+Fri Jun  6 03:41:39 2025: Round over. ion failed to guess the number. The correct number was 27.
+Fri Jun  6 03:45:28 2025: ion connected from ('127.0.0.1', 63449)
+Fri Jun  6 03:45:32 2025: ayan connected from ('127.0.0.1', 63447)
+Fri Jun  6 03:45:33 2025: ayan (chat): hi
+Fri Jun  6 03:45:40 2025: 
+Round 1 started by ayan at level 1.
+Fri Jun  6 03:46:02 2025: Round over. ion failed to guess the number. The correct number was 96.
+Fri Jun  6 03:46:34 2025: Round over. ayan failed to guess the number. The correct number was 96.
+Fri Jun  6 03:52:33 2025: ion connected from ('127.0.0.1', 63730)
+Fri Jun  6 03:52:50 2025: ayan connected from ('127.0.0.1', 63733)
+Fri Jun  6 03:52:55 2025: ion (chat): hi
+Fri Jun  6 03:53:02 2025: 
+Round 1 started by ion at level 1.
+Fri Jun  6 03:59:01 2025: ion connected from ('127.0.0.1', 63820)
+Fri Jun  6 03:59:23 2025: ioff connected from ('127.0.0.1', 63824)
+Fri Jun  6 03:59:26 2025: ioff (chat): hi
+Fri Jun  6 03:59:36 2025: 
+Round 1 started by ioff at level 1.
+Fri Jun  6 03:59:57 2025: Round over. ion failed to guess the number. The correct number was 60.
+Fri Jun  6 04:02:55 2025: ion connected from ('127.0.0.1', 63957)
+Fri Jun  6 04:03:00 2025: ass connected from ('127.0.0.1', 63954)
+Fri Jun  6 04:03:06 2025: 
+Round 1 started by ass at level 1.
+Fri Jun  6 04:05:32 2025: ion connected from ('127.0.0.1', 64118)
+Fri Jun  6 04:05:37 2025: as connected from ('127.0.0.1', 64115)
+Fri Jun  6 04:05:42 2025: as (chat): \strat
+Fri Jun  6 04:05:48 2025: 
+Round 1 started by as at level 1.
+Fri Jun  6 04:12:59 2025: iion connected from ('127.0.0.1', 64460)
+Fri Jun  6 04:13:28 2025: ayan connected from ('127.0.0.1', 64462)
+Fri Jun  6 04:13:30 2025: ayan (chat): hi
+Fri Jun  6 04:13:37 2025: iion (chat): hi
+Fri Jun  6 04:13:47 2025: 
+Round 1 started by iion at level 1.
+Fri Jun  6 04:15:45 2025: hi connected from ('127.0.0.1', 64494)
+Fri Jun  6 04:15:48 2025: hele connected from ('127.0.0.1', 64495)
+Fri Jun  6 04:15:53 2025: hele (chat): hi
+Fri Jun  6 04:15:55 2025: hele (chat): hello
+Fri Jun  6 04:15:58 2025: hi (chat): how 
+Fri Jun  6 04:16:00 2025: hi (chat): are 
+Fri Jun  6 04:16:01 2025: hi (chat): you
+Fri Jun  6 04:16:05 2025: 
+Round 1 started by hi at level 1.
+Fri Jun  6 04:19:50 2025: aa connected from ('127.0.0.1', 64517)
+Fri Jun  6 04:19:52 2025: ee connected from ('127.0.0.1', 64514)
+Fri Jun  6 04:19:57 2025: 
+Round 1 started by ee at level 1.
+Fri Jun  6 04:27:43 2025: aa connected from ('127.0.0.1', 64780)
+Fri Jun  6 04:27:46 2025: bb connected from ('127.0.0.1', 64781)
+Fri Jun  6 04:27:48 2025: bb (chat): hi
+Fri Jun  6 04:27:52 2025: aa (chat): heelp
+Fri Jun  6 04:27:59 2025: 
+Round 1 started by aa at level 1.
+Fri Jun  6 04:28:20 2025: Round over. aa failed to guess the number. The correct number was 24.
+Fri Jun  6 04:28:40 2025: Round over. aa failed to guess the number. The correct number was 24.
+Fri Jun  6 04:28:50 2025: Round over. bb failed to guess the number. The correct number was 24.
+Fri Jun  6 04:31:29 2025: aa connected from ('127.0.0.1', 64899)
+Fri Jun  6 04:31:32 2025: bb connected from ('127.0.0.1', 64898)
+Fri Jun  6 04:31:35 2025: aa (chat): hi
+Fri Jun  6 04:31:38 2025: bb (chat): hello
+Fri Jun  6 04:31:41 2025: bb (chat): how r u
+Fri Jun  6 04:31:47 2025: aa (chat): good how are you
+Fri Jun  6 04:31:50 2025: bb (chat): great
+Fri Jun  6 04:31:53 2025: bb (chat): lets play 
+Fri Jun  6 04:32:07 2025: 
+Round 1 started by bb at level 1.
+Fri Jun  6 04:32:28 2025: Round over. aa failed to guess the number. The correct number was 23.
+Fri Jun  6 04:32:28 2025: Game over. Final leaderboard:
+aa: 0 points
+bb: 0 points
+Fri Jun  6 04:32:38 2025: aa (chat): hi
+Fri Jun  6 04:32:44 2025: aa (chat): hello
+Fri Jun  6 04:36:29 2025: aa connected from ('127.0.0.1', 64962)
+Fri Jun  6 04:36:31 2025: bb connected from ('127.0.0.1', 64963)
+Fri Jun  6 04:36:35 2025: 
+Round 1 started by bb at level 1.
+Fri Jun  6 04:36:55 2025: 
+ Round over. aa failed to guess the number. The correct number was 16.
+Fri Jun  6 04:36:55 2025: Game over. Final leaderboard:
+aa: 0 points
+bb: 0 points
+Fri Jun  6 04:37:11 2025: 
+Round 1 started by aa at level 1.
+Fri Jun  6 04:37:28 2025: 
+ Round over. bb failed to guess the number. The correct number was 16.
+Fri Jun  6 04:37:28 2025: Game over. Final leaderboard:
+Leaderboard is empty.
+Fri Jun  6 04:37:44 2025: bb (chat): fd
+Fri Jun  6 04:37:46 2025: bb (chat): df
+Fri Jun  6 04:37:50 2025: 
+Round 1 started by bb at level 1.
+Fri Jun  6 04:38:02 2025: 
+ Round over. aa failed to guess the number. The correct number was 90.
+Fri Jun  6 04:38:02 2025: Game over. Final leaderboard:
+Leaderboard is empty.
+Fri Jun  6 04:38:08 2025: aa (chat): df
+Fri Jun  6 04:38:08 2025: aa (chat): df
+Fri Jun  6 04:38:08 2025: aa (chat): df
+Fri Jun  6 04:38:09 2025: aa (chat): df
+Fri Jun  6 04:38:13 2025: aa (chat): dq
+Fri Jun  6 04:38:15 2025: aa (chat): a
+Fri Jun  6 04:38:20 2025: 
+Round 1 started by aa at level 1.
