@@ -131,3 +131,123 @@ Fri Jun  6 04:38:13 2025: aa (chat): dq
 Fri Jun  6 04:38:15 2025: aa (chat): a
 Fri Jun  6 04:38:20 2025: 
 Round 1 started by aa at level 1.
+Fri Jun  6 04:43:04 2025: AA connected from ('127.0.0.1', 65302)
+Fri Jun  6 04:43:07 2025: BB connected from ('127.0.0.1', 65303)
+Fri Jun  6 04:43:11 2025: AA (chat): hi
+Fri Jun  6 04:43:13 2025: BB (chat): hi
+Fri Jun  6 04:43:20 2025: 
+Round 1 started by AA at level 1.
+Fri Jun  6 04:43:43 2025: 
+ Round over. AA failed to guess the number. The correct number was 16.
+Fri Jun  6 04:43:43 2025: Game over. Final leaderboard:
+AA: 0 points
+BB: 0 points
+Fri Jun  6 04:46:26 2025: aa connected from ('127.0.0.1', 65338)
+Fri Jun  6 04:46:31 2025: bb connected from ('127.0.0.1', 65339)
+Fri Jun  6 04:46:35 2025: bb (chat): gg
+Fri Jun  6 04:46:47 2025: 
+Round 1 started by bb at level 1.
+Fri Jun  6 04:47:03 2025: 
+ aa guessed correctly! aa scored 10 points this round.
+Fri Jun  6 04:51:06 2025: aa connected from ('127.0.0.1', 65373)
+Fri Jun  6 04:51:09 2025: bb connected from ('127.0.0.1', 65374)
+Fri Jun  6 04:51:12 2025: aa (chat): hi
+Fri Jun  6 04:51:15 2025: bb (chat): hi
+Fri Jun  6 04:51:19 2025: 
+Round 1 started by bb at level 1.
+Fri Jun  6 04:51:39 2025: 
+ Round over. aa failed to guess the number. The correct number was 98.
+Fri Jun  6 04:52:01 2025: 
+ Round over. bb failed to guess the number. The correct number was 98.
+Fri Jun  6 05:01:21 2025: aa connected from ('127.0.0.1', 49256)
+Fri Jun  6 05:01:25 2025: aa connected from ('127.0.0.1', 49255)
+Fri Jun  6 05:05:50 2025: aa connected from ('127.0.0.1', 49271)
+Fri Jun  6 05:06:13 2025: hi connected from ('127.0.0.1', 49274)
+Fri Jun  6 05:06:16 2025: hi (chat): dvdv
+Fri Jun  6 05:06:25 2025: 
+Round 1 started by hi at level 1.
+Fri Jun  6 05:07:34 2025: aa connected from ('127.0.0.1', 49277)
+Fri Jun  6 05:07:38 2025: bb connected from ('127.0.0.1', 49278)
+Fri Jun  6 05:07:42 2025: bb (chat): hi
+Fri Jun  6 05:07:44 2025: bb (chat): qwqw
+Fri Jun  6 05:07:47 2025: aa (chat): bdsd
+Fri Jun  6 05:07:52 2025: 
+Round 1 started by aa at level 1.
+Fri Jun  6 05:08:28 2025: 
+ Round over. aa failed to guess the number. The correct number was 60.
+Fri Jun  6 05:08:45 2025: 
+ Round over. bb failed to guess the number. The correct number was 60.
+Fri Jun  6 05:08:56 2025: 
+ Round over. aa failed to guess the number. The correct number was 60.
+Fri Jun  6 05:08:56 2025: Game over. Final leaderboard:
+aa: 0 points
+bb: 0 points
+Fri Jun  6 05:15:49 2025: aa connected from ('127.0.0.1', 49497)
+Fri Jun  6 05:15:51 2025: bb connected from ('127.0.0.1', 49498)
+Fri Jun  6 05:15:55 2025: aa (chat): fdf
+Fri Jun  6 05:15:55 2025: aa (chat): fdf
+Fri Jun  6 05:16:00 2025: 
+Round 1 started by aa at level 1.
+Fri Jun  6 05:16:50 2025: 
+ Round over. bb failed to guess the number. The correct number was 17.
+Fri Jun  6 05:25:20 2025: aa connected from ('127.0.0.1', 49693)
+Fri Jun  6 05:25:22 2025: bb connected from ('127.0.0.1', 49692)
+Fri Jun  6 05:25:26 2025: bb (chat): hi
+Fri Jun  6 05:25:28 2025: aa (chat): hi
+Fri Jun  6 05:25:32 2025: 
+Round 1 started by aa at level 1.
+Fri Jun  6 05:25:39 2025: 
+ aa guessed correctly! aa scored 10 points this round.
+Fri Jun  6 05:29:21 2025: aa connected from ('127.0.0.1', 49775)
+Fri Jun  6 05:29:23 2025: bb connected from ('127.0.0.1', 49776)
+Fri Jun  6 05:29:25 2025: bb (chat): hi
+Fri Jun  6 05:29:37 2025: 
+Round 1 started by bb at level 1.
+Fri Jun  6 05:29:58 2025: 
+ Round over. aa failed to guess the number. The correct number was 42.
+Fri Jun  6 05:30:08 2025: 
+ Round over. bb failed to guess the number. The correct number was 42.
+Fri Jun  6 05:45:14 2025: aa connected from ('127.0.0.1', 49893)
+Fri Jun  6 05:45:17 2025: aa connected from ('127.0.0.1', 49894)
+Fri Jun  6 05:45:18 2025: aa (chat): hi
+Fri Jun  6 05:45:22 2025: aa (chat): hello
+Fri Jun  6 05:45:36 2025: aa (chat): great
+Fri Jun  6 05:53:20 2025: aa connected from ('127.0.0.1', 49950)
+Fri Jun  6 05:53:23 2025: bb connected from ('127.0.0.1', 49951)
+Fri Jun  6 05:53:26 2025: bb (chat): sdfd
+Fri Jun  6 05:53:29 2025: aa (chat): dfd
+Fri Jun  6 05:53:35 2025: 
+Round 1 started by bb at level 1.
+Fri Jun  6 05:53:57 2025: 
+ Round over. bb failed to guess the number. The correct number was 17.
+Fri Jun  6 06:22:50 2025: aa connected from ('127.0.0.1', 50517)
+Fri Jun  6 06:22:52 2025: bb connected from ('127.0.0.1', 50518)
+Fri Jun  6 06:22:54 2025: bb (chat): hi
+Fri Jun  6 06:22:56 2025: aa (chat): helo
+Fri Jun  6 06:23:00 2025: aa (chat): /start
+Fri Jun  6 06:23:49 2025: aa connected from ('127.0.0.1', 50524)
+Fri Jun  6 06:23:52 2025: bb connected from ('127.0.0.1', 50525)
+Fri Jun  6 06:23:55 2025: aa (chat): hi
+Fri Jun  6 06:23:57 2025: bb (chat): ehllo
+Fri Jun  6 06:24:03 2025: Game started by bb at level 1. Max number: 100
+Fri Jun  6 06:24:23 2025: bb failed to guess. Secret was 13.
+Fri Jun  6 06:24:29 2025: aa failed to guess. Secret was 13.
+Fri Jun  6 06:24:49 2025: bb failed to guess. Secret was 48.
+Fri Jun  6 06:24:54 2025: aa failed to guess. Secret was 48.
+Fri Jun  6 06:25:12 2025: bb guessed correctly. Secret was 44.
+Fri Jun  6 06:25:30 2025: aa failed to guess. Secret was 44.
+Fri Jun  6 06:25:30 2025: Game ended.
+
+Fri Jun  6 06:31:25 2025: ion connected from ('127.0.0.1', 50639)
+Fri Jun  6 06:31:28 2025: ayan connected from ('127.0.0.1', 50640)
+Fri Jun  6 06:31:42 2025: ayan (chat): hello
+Fri Jun  6 06:31:45 2025: ion (chat): hi
+Fri Jun  6 06:31:51 2025: Game started by ion at level 1. Max number: 100
+Fri Jun  6 06:32:12 2025: ayan failed to guess. Secret was 9.
+Fri Jun  6 06:32:15 2025: ion failed to guess. Secret was 9.
+Fri Jun  6 06:32:36 2025: ayan failed to guess. Secret was 100.
+Fri Jun  6 06:32:44 2025: ion failed to guess. Secret was 100.
+Fri Jun  6 06:33:05 2025: ion failed to guess. Secret was 37.
+Fri Jun  6 06:33:09 2025: ayan failed to guess. Secret was 37.
+Fri Jun  6 06:33:09 2025: Game ended.
+

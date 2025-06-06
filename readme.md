@@ -1,25 +1,39 @@
 # 🎮 Multiplayer Number Guessing Game (TCP)
 
-## Overview
-This is a real-time multiplayer number guessing game using Python sockets. Players try to guess a number between 1 and 100. Chat and compete across 3 rounds!
+Setup instructions:
 
----
+In one terminal run :
+python server.py
 
-## 💡 Features
+In separate terminals (or on different machines)
+python client.py
 
-- 🎯 Number guessing game with hints
-- 💬 Chat system using `/chat`
-- ⏱️ 15-second wait between rounds for chatting
-- 🏆 Leaderboard with scores
-- ⏰ 10-second timeout per guess
+ Gameplay Guide
+1. Pre-Game Chat: After joining, players enter a chat room.
+2. Any player can start the game by typing \start.
+3. Players can also type \board to view the leaderboard.
+4. Type normal messages to chat with others before the game.
 
----
+Starting the Game
+Type \start to begin.
+Choose a difficulty level:
+1: Easy (1–100)
+2: Medium (1–150)
+3: Hard (1–200)
 
-## 🔧 Setup
+The game will start for all players simultaneously.
 
-### Requirements
-- Python 3.x
+Game Rounds
+There are 3 rounds.
+1. Each round has a 20-second time limit.
+2. Players guess numbers until:
+3. Someone guesses correctly (gets 10 points), or Time runs out.
+4. Rounds start for all player at same time, and after the times up
+5. you have  to enter atleast 1 value to end the round
+6. After each round, the correct number is shown.
 
-### Start the server
-```bash
-python game_server.py
+Scoring
+1. +10 points for guessing the correct number.
+2. No penalty for wrong guesses.
+3. Final leaderboard is displayed at the end of three rounds.
+
