@@ -35,3 +35,19 @@ Fri Jun  6 15:04:32 2025: ion failed to guess. Secret was 33.
 Fri Jun  6 15:04:36 2025: ayan failed to guess. Secret was 33.
 Fri Jun  6 15:04:36 2025: Game ended.
 
+Fri Jun  6 21:17:01 2025: ayan connected from ('127.0.0.1', 59304)
+Fri Jun  6 21:17:05 2025: ion connected from ('127.0.0.1', 59303)
+Fri Jun  6 21:17:12 2025: ion (chat): hi 
+Fri Jun  6 21:17:14 2025: ion (chat): hello
+Fri Jun  6 21:17:20 2025: ayan (chat): how are you 
+Fri Jun  6 21:18:07 2025: ion (chat): great lets play 
+Fri Jun  6 21:18:16 2025: ayan (chat): great 
+Fri Jun  6 21:18:18 2025: ayan (chat): lets plat 
+Fri Jun  6 21:18:23 2025: ion (chat): ok no prob
+Fri Jun  6 21:18:30 2025: Game started by ion at level 1. Max number: 100
+Fri Jun  6 21:19:01 2025: ayan failed to guess. Secret was 55.
+Fri Jun  6 21:19:04 2025: ion failed to guess. Secret was 55.
+Fri Jun  6 21:19:22 2025: ion guessed correctly. Secret was 84.
+Fri Jun  6 21:19:36 2025: ayan failed to guess. Secret was 84.
+Fri Jun  6 21:19:49 2025: Error during play_round for ayan: [WinError 10054] An existing connection was forcibly closed by the remote host
+Fri Jun  6 21:19:51 2025: Error during play_round for ion: [WinError 10054] An existing connection was forcibly closed by the remote host
