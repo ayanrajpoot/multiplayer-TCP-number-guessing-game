@@ -45,7 +45,7 @@ def chat_room(client_socket, name):
     global round_number, game_active
     if game_active == False :
         broadcast_message(f"{name} has joined the Chat room.")
-        client_socket.send("Type '\\start' to start the game. Type '\\board' to see the leaderboard. Or you can just chat.".encode('utf-8'))
+        client_socket.send("Type '\\start' to start the game. Or you can just chat normally.".encode('utf-8'))
         
         while game_active == False:
                 message = client_socket.recv(1024).decode('utf-8')
@@ -55,10 +55,6 @@ def chat_room(client_socket, name):
                     client_socket.send("Please select from level 1, 2, or 3.".encode('utf-8'))
                     level = client_socket.recv(1024).decode('utf-8')
                     return start_game(level,name)
-                
-                elif message.lower() == "\\board":
-                    leaderboard = generate_leaderboard()
-                    client_socket.send(leaderboard.encode('utf-8'))
                 
                 elif message.lower() == "\\start" and game_active:
                     client_socket.send("The game is already in progress.".encode('utf-8'))

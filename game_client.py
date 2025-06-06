@@ -2,7 +2,7 @@ import socket
 import threading
 
 # Server configurationion
-# or ip of the server 
+# use the  ip of the server 
 HOST = 'localhost'
 PORT = 12345
 
