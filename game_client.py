@@ -23,7 +23,6 @@ client.connect((HOST, PORT))
 # Start a thread to listen to messages constantly
 threading.Thread(target=receive_messages, args=(client,), daemon=True).start()
 
-# Main client loop to send messages
 def start_game():
     while True:
         # Take user input and send it to the server
