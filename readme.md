@@ -38,3 +38,32 @@ Scoring
 2. No penalty for wrong guesses.
 3. Final leaderboard is displayed at the end of three rounds.
 
+logs:
+All of the logs are in the logs file game_log.txt.
+
+Usage Example
+ Terminal 1:
+> python server.py
+> [Server listening...]
+
+Terminal 2 (Player 1):
+> python client.py
+> Welcome to the Guessing Game! Please enter your name: Alice
+> Alice has joined the Chat room.
+> \start
+> Please select from level 1, 2, or 3: 1
+> Game started!
+
+Terminal 3 (Player 2):
+> python client.py
+> Welcome to the Guessing Game! Please enter your name: Bob
+> Bob has joined the Chat room.
+
+Game:
+> Round 1 started
+> Enter your guess: 45
+> Too high.
+> Enter your guess: 23
+> Alice guessed correctly! +10 points
+
+[Leaderboard displayed]
