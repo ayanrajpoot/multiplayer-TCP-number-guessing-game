@@ -20,7 +20,7 @@ def receive_messages(client_socket):
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((HOST, PORT))
 
-# Start a thread to listen to messages
+# Start a thread to listen to messages constantly
 threading.Thread(target=receive_messages, args=(client,), daemon=True).start()
 
 # Main client loop to send messages

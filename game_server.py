@@ -5,7 +5,7 @@ import time
 
 # Game configuration
 MAX_GUESSES = 100
-GUESS_TIME_LIMIT = 20  
+GUESS_TIME_LIMIT = 30  
 ROUNDS = 3
 
 HOST = 'localhost'
@@ -97,11 +97,11 @@ def start_game(level, host_name):
     log_game_event("Game ended.\n")
     game_active = False
     round_number = 0
-    chat_room()
+    # chat_room()
 
 def play_round(client_socket, name, secret_number):
     try:
-        client_socket.send(f"Round {round_number} started! Enter your guess:\n".encode('utf-8'))
+        # client_socket.send(f"Round {round_number}\n".encode('utf-8'))
         start_time = time.time()
         guessed_correctly = False
 
