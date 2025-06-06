@@ -1,4 +1,4 @@
-# 🎮 Multiplayer Number Guessing Game (TCP)
+ Multiplayer Number Guessing Game (TCP)
 
 Setup instructions:
 
@@ -7,6 +7,7 @@ python server.py
 
 In separate terminals (or on different machines)
 python client.py
+change HOST = 'localhost' to the IP address of the server (e.g. 192.168.1.100) if you are not running the server on the same machine.
 
  Gameplay Guide
 1. Pre-Game Chat: After joining, players enter a chat room.
