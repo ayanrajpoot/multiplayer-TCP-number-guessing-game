@@ -1,5 +1,5 @@
  Multiplayer Number Guessing Game (TCP) by
-Ayan Ali 261943131
+Ayan Ali - 261943131
 Muhammad Faizan Ahmad - 261945342
 
 Setup instructions:

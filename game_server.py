@@ -142,11 +142,6 @@ def generate_leaderboard():
     leaderboard = "\n".join([f"{name}: {score} points" for name, score in sorted_players])
     return leaderboard
 
-# def reset_game():
-#     global round_number, player_scores, clients, game_active
-#     game_active = False
-#     broadcast_message("\nGame has been reset. Type '\\start' to play again.")
-#     return
 # Server socket setup
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((HOST, PORT))
